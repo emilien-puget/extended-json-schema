@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/draft-2020-12-extended",
+    "$vocabulary": {
+        "https://json-schema.org/draft/2020-12/vocab/core": true,
+        "https://json-schema.org/draft/2020-12/vocab/applicator": true,
+        "https://json-schema.org/draft/2020-12/vocab/validation": true,
+        "https://json-schema.org/draft/2020-12/vocab/meta-data": true,
+        "https://json-schema.org/draft/2020-12/vocab/format-annotation": true,
+        "https://json-schema.org/draft/2020-12/vocab/format-assertion": true,
+        "https://json-schema.org/draft/2020-12/vocab/content": true
+    },
+    "allOf": [
+        {
+            "$ref": "https://json-schema.org/draft/2020-12/schema"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "format": {
+                    "type": "string",
+                    "description": "Format-assertion vocab for validating strings, such as email or IPv4"
+                },
+                "contentMediaType": {
+                    "type": "string",
+                    "description": "Content vocab to validate media types of data"
+                },
+                "contentEncoding": {
+                    "type": "string",
+                    "description": "Content vocab for validating encoding of content"
+                }
+            }
+        }
+    ]
+}
